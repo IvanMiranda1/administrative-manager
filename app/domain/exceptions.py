@@ -13,6 +13,14 @@ class ConfirmedDataOverwriteError(DomainError):
     """
 
 
+class DuplicateSourceError(DomainError):
+    """
+    Ya existe un AdministrativeItem creado a partir de este mismo Source
+    (mismo email/reference). Evita duplicar items por reintentos o
+    reenvíos accidentales.
+    """
+
+
 class UnsafeActionError(DomainError):
     """
     Se intentó ejecutar una acción con efecto real (ej. pago) sin
